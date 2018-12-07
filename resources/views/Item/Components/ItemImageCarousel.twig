@@ -4,8 +4,8 @@
       <div class="col-xs-12">
         <div id="single-carousel" class="owl-carousel owl-theme owl-single-item" ref="single">
           <div v-for="image in singleImages">
-            <a :href="image.urlSecondPreview" data-lightbox="single-big-image-gallery">
-              <img :alt="getAltText(image)" class="owl-lazy" :data-src="image.urlSecondPreview" :title="getItemName()"  itemprop="image">
+            <a :href="image.all.urlSecondPreview" data-lightbox="single-big-image-gallery">
+              <img :alt="getAltText(image)" class="owl-lazy" :data-src="image.all.urlSecondPreview" :title="getItemName()"  itemprop="image">
             </a>
           </div>
         </div>
