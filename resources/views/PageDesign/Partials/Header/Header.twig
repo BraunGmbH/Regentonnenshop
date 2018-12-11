@@ -24,7 +24,22 @@
                 <li><a data-toggle="modal" href="#lieferung"><i class="fa fa-check-circle"></i>{{ trans("Regentonnenshop::Template.headerLieferung") }}</a></li>
                 <li><a data-toggle="modal" href="#ssl"><i class="fa fa-check-circle"></i>{{ trans("Regentonnenshop::Template.headerSSL") }}</a></li>
               </ul>
+
                 <ul id="controlsList" class="controls-list list-inline">
+
+                  <li class="list-inline-item control-search visible-sm">
+                      <a class="anicon anicon-search-xcross"
+                         aria-label="toggle search"
+                         data-toggle="collapse"
+                         href="#searchBoxMobile"
+                         aria-expanded="false"
+                         aria-controls="searchBoxMobile"
+                         data-parent="#controlsList">
+                          <span class="fa fa-search" aria-hidden="true"></span>
+                      </a>
+                      <span class="pipe"></span>
+                  </li>
+
                     <li class="list-inline-item control-user">
                         <user-login-handler>
                             <a data-toggle="modal">
@@ -38,6 +53,7 @@
                             </a>
                         </user-login-handler>
                     </li>
+
                     <li class="list-inline-item control-basket">
                         <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                             {% if config("Ceres.header.basket_values") != "sum" %}
@@ -55,9 +71,11 @@
                             <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ showNetPrices | json_encode }}"></basket-preview>
                         {% endif %}
                     </li>
+
                 </ul>
               </div>
             </div>
+
             <div class="container-max middle">
                 <div id="logo">
                     <a href="{{ homepageURL }}">
@@ -72,19 +90,16 @@
                     <item-search template="#vue-item-search"></item-search>
                 </div>
                 <div id="tuvSued" style="background-color: #ffffff">
-
                   <div class="col-lg-6 col-md-6 col-sm-6">
                     <a href="https://www.fbr.de/" title="Fachvereinigung Betriebs- und Regenwassernutzung e.V." target="_blank">
                       <img src="https://cdn02.plentymarkets.com/yi9z0xbw5t14/frontend/regentonnenshop/ceres/img/fbr.png" title="FBR" alt="Fachvereinigung Regenwassernutzung" style="width: 79%">
                     </a>
                   </div>
-
                   <div class="col-lg-6 col-md-6 col-sm-6">
                     <a href="https://www.netzsieger.de/p/regentonnenshop" title="Regentonnenshop.de im Test von Netzsieger.de" target="_blank">
                       <img src="https://cdn02.plentymarkets.com/yi9z0xbw5t14/frontend/regentonnenshop/ceres/img/Siegel_Sehr_Gut_Regentonnenshop_Medium.png" title="Testergebnis Regentonnenshop.de Sehr Gut" alt="Netzsieger.de" style="width: 100%">
                     </a>
                   </div>
-
                 </div>
         </div>
         {% include "Regentonnenshop::PageDesign.Partials.Header.Navigation" %}
@@ -103,3 +118,10 @@
 {% endif %}
 
 <mobile-navigation :navigation-tree-data="{{ categories | json_encode }}" :initial-category="{{ initialCategory | json_encode }}" template="#vue-mobile-navigation"></mobile-navigation>
+<div class="container-max page-header">
+    <div class="row">
+        <div id="searchBoxMobile" class="cmp cmp-search-box collapse">
+            <item-search template="#vue-item-search"></item-search>
+        </div>
+      </div>
+  </div>
