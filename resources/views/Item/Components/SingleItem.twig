@@ -74,7 +74,7 @@
                         <div class="sold">
                           <slot name="Eigenschaft"></slot>
                         </div>
-                        <div class="base-price text-muted" v-if="currentVariation.unit">
+                        <div class="base-price text-muted hidden" v-if="currentVariation.unit">
                             <div v-if="currentVariation.variation.mayShowUnitPrice">
                                 {{ trans("Ceres::Template.singleItemUnitPrice") }}
                                 <span class="base-price-value">
