@@ -81,17 +81,11 @@
           {% endif %}
           <!-- -->
           <div class="row">
-            {% set count = 1 %}
-            {% for curCat in categories %}
-              {% set itemList = services.itemList.getItemList( 'category', curCat.id, null, 100 ).documents %}
-                {% for item in itemList %}
-                  {% if  item.data.item.storeSpecial.id == 3 and count <= 4 %}
-                    <div class="col-xs-12 col-sm-6 startArt">
-                        {% include "Regentonnenshop::Category.Item.Partials.CategoryListStart" with { 'item': item, 'sorting': variation.number_desc } %}
-                    </div>
-                    {% set count = count + 1 %}
-                    {% endif %}
-                {% endfor %}
+            {% set list = services.itemList.getItemList( 'tag_list', 1, null, 4).documents %}
+            {% for items in list %}
+                <div class="col-xs-12 col-sm-6 startArt">
+                    {% include "Regentonnenshop::Category.Item.Partials.CategoryListStart" with { 'item': items } %}
+                </div>
             {% endfor %}
           </div>
         </div>
