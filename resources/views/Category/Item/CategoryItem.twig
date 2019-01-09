@@ -48,7 +48,7 @@
               <h1 class="category-title">{{ category.details[0].name }}</h1>
               <h2 class="category-subtitle">{{ category.details[0].shortDescription | raw }}</h2>
             </div>
-            <img src="/documents/{{category.details[0].image2Path}}" alt="">
+            <img src="/documents/{{category.details[0].image2Path}}" alt="{{ category.details[0].name }}" title="{{ category.details[0].name }}">
           </div>
           <div id="category-description-container" class="category-description">{{ category.details[0].description | raw }}</div>
 
