@@ -84,7 +84,7 @@
             {% set list = services.itemList.getItemList( 'tag_list', 2, null, 4).documents %}
             {% for items in list %}
                 <div class="col-xs-12 col-sm-6 startArt">
-                    {% include "Zisternenfilter::Category.Item.Partials.CategoryListStart" with { 'item': items } %}
+                    {% include "Regentonnenshop::Category.Item.Partials.CategoryListStart" with { 'item': items } %}
                 </div>
             {% endfor %}
           </div>
