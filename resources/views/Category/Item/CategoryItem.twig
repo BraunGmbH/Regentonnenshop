@@ -1,6 +1,7 @@
 {% extends getPartial('page-design') %}
 {% import "Ceres::Category.Macros.CategoryTree" as Tree %}
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
 
 {% block PageBody %}
 
@@ -91,4 +92,10 @@
     <meta name="keywords" content="{{ category.details[0].metaKeywords }}">
 
     <meta name="robots" content="{{ metaRobots }}">
+    <meta property="og:title" content="{% if category.details[0].metaTitle %}{{ category.details[0].metaTitle }}{% else %}{{ category.details[0].name }}{% endif %}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/{{ category.details[0].nameUrl }}/"/>
+  <meta property="og:description" content="{{ category.details[0].metaDescription }}"/>
+  <meta property="og:image"
+        content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
 {% endblock %}
