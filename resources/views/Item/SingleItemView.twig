@@ -51,7 +51,7 @@
         <ul>
         {%  for variationProperty in item.documents[0].data.variationProperties %}
            {% if variationProperty.property.id >= 5 and variationProperty.property.id <= 8  %}
-             <li>{{ variationProperty.values.value }}</li>
+             <li><h3>{{ variationProperty.values.value }}</h3></li>
            {% endif %}
         {% endfor %}
       </ul>
@@ -165,4 +165,3 @@
     </div>
   </div>
   </noscript>
-  
