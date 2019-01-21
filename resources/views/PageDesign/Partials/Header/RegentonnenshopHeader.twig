@@ -46,9 +46,9 @@
                 <div id="logo">
                     <a href="{{ homepageURL }}">
                         {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
-                            <img alt="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid"/>
+                            <img alt="{{ companyName }}" title="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid"/>
                         {% else %}
-                            <img alt="{{ companyName }}" src="{{ plugin_path('Ceres') }}/{{ companyLogo }}" class="img-fluid"/>
+                            <img alt="{{ companyName }}" title="{{ companyName }}" src="{{ plugin_path('Ceres') }}/{{ companyLogo }}" class="img-fluid"/>
                         {% endif %}
                     </a>
                 </div>
