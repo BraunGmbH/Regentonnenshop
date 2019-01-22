@@ -40,11 +40,13 @@
           "serialNumber": "{{ item.documents[0].data.variation.number }}",
           "url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/{{ item.documents[0].data.texts.urlPath }}/a-{{ item.documents[0].data.item.id }}"
       },
+      {% if item.documents[0].data.item.feedbackCount > 0 %}
       "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "{{ item.documents[0].data.item.feedbackDecimal }}",
           "ratingCount": "{{ item.documents[0].data.item.feedbackCount }}"
         },
+        {% endif %}
       "depth": {
           "@type": "QuantitativeValue",
           "value": "{{ item.documents[0].data.variation.lengthMM }}"
