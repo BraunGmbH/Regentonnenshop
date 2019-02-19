@@ -21,7 +21,8 @@
             <div class="thumb-image">
                 <div class="square-container">
                     <div class="square-inner main-image">
-                      <img :alt="itemData | itemName" :title="itemData | itemName"  :src="itemData | itemURL" />                        
+                    <img :alt="itemData | itemName" :title="itemData | itemName"  :src="itemData.images.all[0].urlPreview" />
+                      
                     </div>
                 </div>
             </div>
