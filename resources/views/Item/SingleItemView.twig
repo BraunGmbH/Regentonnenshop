@@ -67,7 +67,7 @@
         {% endfor %}
       </p>
       <div slot="CrossSellingAccessory">
-         {{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", accessory) }}
+         {{ component( "Regentonnenshop::Containers.Components.ContainerItemList") }}
          <container-item-list :items="{{ accessory| json_encode }}"></container-item-list>
      </div>
 </single-item>
