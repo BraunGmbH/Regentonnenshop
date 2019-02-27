@@ -2,7 +2,7 @@
 {% set homepageURL = services.url.getHomepageURL() %}
 
 {% if categoryBreadcrumbs is not empty %}
-    <nav data-component="breadcrumbs" data-renderer="twig" class="container-max small">
+    <nav data-component="breadcrumbs" data-renderer="twig" class="container-max small test1">
         <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
               <span>Sie sind hier:&nbsp;</span><span class="fa fa-home"><span itemprop="name" class="sr-only">Home</span></span>
@@ -31,7 +31,7 @@
                 </li>
             {% else %}
                 <li class="breadcrumb-item active" v-cloak v-if="$store.state.item.variation.documents" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                      <a itemprop="item" href="{{ item.variation.documents[0].texts.urlPath }}/a-{{ item.variation.documents[0].data.item.id }}"><span itemprop="name">${ $store.state.item.variation.documents[0].data | itemName }</span></a>
+                      <a itemprop="item" href="{{ item.documents[0].data.texts.urlPath }}/a-{{ item.documents[0].data.item.id }}"><span itemprop="name">${ $store.state.item.variation.documents[0].data | itemName }</span></a>
                       <meta itemprop="position" content="{{count}}" />
                 </li>
             {% endif %}
