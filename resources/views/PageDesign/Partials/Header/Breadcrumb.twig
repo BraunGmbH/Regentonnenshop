@@ -22,7 +22,6 @@
               {% endif %}
               {% set count = count + 1 %}
           {% endfor %}
-
             {% set lastCategory = categoryBreadcrumbs | last %}
             {% if lastCategory.details is defined %}
                 <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
