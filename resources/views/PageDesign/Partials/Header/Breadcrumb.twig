@@ -7,7 +7,6 @@
           <li class="breadcrumb-item">
               <span>Sie sind hier:&nbsp;</span><span class="fa fa-home"></span>
           </li>
-
           {% set break = false %}
             {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}
                 {% if category.details[0] %}
@@ -18,7 +17,6 @@
                     {% set break = true %}
                 {% endif %}
             {% endfor %}
-
             {% set lastCategory = categoryBreadcrumbs | last %}
             {% if lastCategory.details is defined %}
                 <li class="breadcrumb-item active"><span>{{ lastCategory.details[0].name }}</span></li>
